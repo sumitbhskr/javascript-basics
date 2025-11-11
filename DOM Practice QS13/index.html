@@ -1,0 +1,23 @@
+<!-- Qs2. Create a button that changes color to green on click -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Button Color</title>
+</head>
+<body>
+  <script>
+    // Create button using JS
+    let button = document.createElement("button");
+    button.innerText = "Click Me";
+    document.body.append(button);
+
+    // Add event listener
+    button.addEventListener("click", function() {
+      button.style.backgroundColor = "green";
+      button.style.color = "white";
+    });
+  </script>
+</body>
+</html>
