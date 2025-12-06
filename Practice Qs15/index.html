@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Input Validation</title>
+</head>
+<body>
+   
+  <h2 id="displayName">Your name will appear here...</h2>
+  <input type="text" id="nameInput" placeholder="Enter your name" />
+
+  <script>
+    let input = document.querySelector("#nameInput");
+    let heading = document.querySelector("#displayName");
+
+    input.addEventListener("input", function() {
+      // Allow only letters (a-z, A-Z) and space
+      let filtered = input.value.replace(/[^a-zA-Z ]/g, "");
+      input.value = filtered; // prevent invalid characters in input
+      heading.innerText = filtered; // show dynamically
+    });
+  </script>
+</body>
+</html>
