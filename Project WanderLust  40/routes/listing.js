@@ -12,7 +12,7 @@ router
   .post(
     isLoggedIn,
     validateListing,
-    wrapAsync(listingController.createListing)
+    wrapAsync(listingController.createListing),
   );
 
 // New Route
@@ -25,20 +25,16 @@ router
     isLoggedIn,
     isOwner,
     validateListing,
-    wrapAsync(listingController.updateListing)
+    wrapAsync(listingController.updateListing),
   )
-  .delete(
-    isLoggedIn,
-    isOwner,
-    wrapAsync(listingController.destroyListing)
-  );
+  .delete(isLoggedIn, isOwner, wrapAsync(listingController.destroyListing));
 
 // Edit Route
 router.get(
   "/:id/edit",
   isLoggedIn,
   isOwner,
-  wrapAsync(listingController.renderEditForm)
+  wrapAsync(listingController.renderEditForm),
 );
 
 module.exports = router;
